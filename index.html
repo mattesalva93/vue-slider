@@ -31,7 +31,7 @@
                         <i class="fas fa-chevron-circle-up"></i>
                     </div>
                     <div id="thumbnailscontainer">
-                        <div v-for="(elemento, indice) in elenco" class="ms_thumbnails" :id=" 'thumbnailitem-' + indice" :class="{'ms_opacity-off':iscorrente(indice)}" >
+                        <div v-for="(elemento, indice) in elenco" class="ms_thumbnails" :id=" 'thumbnailitem-' + indice" @click="corrente = indice" :class="{'ms_opacity-off':iscorrente(indice)}" >
 
                             <img :src="elemento.pic" alt="">
     
