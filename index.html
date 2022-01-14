@@ -17,7 +17,7 @@
             <div class="row position-relative">
                 <div class="col-10 p-0 position-relative" id="picturecontainer">
                    
-                    <div v-for="(elemento, indice) in elenco" class="items active" >
+                    <div v-for="(elemento, indice) in elenco" class="items" :class="iscorrente(indice)" >
 
                         <img :src="elemento.pic" alt="">
                         <h1>{{ elemento.title }} </h1>
@@ -31,7 +31,11 @@
                         <i class="fas fa-chevron-circle-up"></i>
                     </div>
                     <div id="thumbnailscontainer">
+                        <div v-for="(elemento, indice) in elenco" class="ms_thumbnails" :class="opacityon(indice)" >
 
+                            <img :src="elemento.pic" alt="">
+    
+                        </div>
                     </div>
                     <div class="ms_chevron-down">
                         <i class="fas fa-chevron-circle-down"></i>

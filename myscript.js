@@ -1,6 +1,7 @@
 let app = new Vue({
     el: "#container",
     data: {
+        corrente : 0,
         elenco : [
             {
                 pic: 'img/01.jpg',
@@ -30,7 +31,18 @@ let app = new Vue({
         ],
     },
     methods : {
-        
+        iscorrente: function(indiceimmagine){
+            if(indiceimmagine == this.corrente){
+                return "active"
+            }
+            return "";
+        },
+        opacityon: function(indiceimmagine){
+            if(indiceimmagine == this.corrente){
+                return "ms_opacity-off"
+            }
+            return "";
+        }
     
     }
 
