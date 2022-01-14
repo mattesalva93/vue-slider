@@ -36,14 +36,20 @@ let app = new Vue({
             return indiceimmagine == this.corrente
            
         },
-        indietro: function(){
+
+        indietro: function(elenco){
             this.corrente--;
+            if(this.corrente < 0){
+                this.corrente = elenco.length - 1;
+            }
         },
-        successivo: function(){
+        
+        successivo: function(elenco){
             this.corrente++;
+            if(this.corrente == elenco.length){
+                this.corrente = 0;
+            }
         }
     
     }
-
-    
 });
