@@ -17,11 +17,11 @@
             <div class="row position-relative">
                 <div class="col-10 p-0 position-relative" id="picturecontainer">
                    
-                    <div v-for="(elemento, indice) in elenco" class="items" >
+                    <div v-for="(elemento, indice) in elenco" class="items active" >
 
-                        <img :src="elenco.pic" alt="">
-                        <h1>{{ elenco.title }} </h1>
-                        <p> {{ elenco.text }} </p>
+                        <img :src="elemento.pic" alt="">
+                        <h1>{{ elemento.title }} </h1>
+                        <p> {{ elemento.text }} </p>
 
                     </div>
                 </div>
