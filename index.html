@@ -15,9 +15,9 @@
     <main>
         <div id="container" class="container ms_slider">
             <div class="row position-relative">
-                <div class="col-10 p-0 position-relative" id="picturecontainer">
+                <div v-bind:autoplay="true" class="col-10 p-0 position-relative" id="picturecontainer">
                    
-                    <div v-for="(elemento, indice) in elenco" class="items" :class="{active:iscorrente(indice)}" :id=" 'item-' + indice" >
+                    <div v-for="(elemento, indice) in elenco" class="items" :class="{active:iscorrente(indice)}" :id=" 'item-' + indice">
 
                         <img :src="elemento.pic" alt="">
                         <h1>{{ elemento.title }} </h1>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="col-2 position-relative p-0">
-                    <div class="ms_chevron-up" @click="indietro(elenco)">
+                    <div class="ms_chevron-up" @click="indietro(elenco); autoplay(elenco)">
                         <i class="fas fa-chevron-circle-up"></i>
                     </div>
                     <div id="thumbnailscontainer">
@@ -37,7 +37,7 @@
     
                         </div>
                     </div>
-                    <div class="ms_chevron-down" @click="successivo(elenco)">
+                    <div class="ms_chevron-down" @click="successivo(elenco); autoplay(elenco)">
                         <i class="fas fa-chevron-circle-down"></i>
                     </div>
                 </div>

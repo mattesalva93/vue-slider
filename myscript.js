@@ -28,8 +28,9 @@ let app = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             }
-        ],
+        ]
     },
+
     methods : {
         iscorrente: function(indiceimmagine){
            
@@ -49,7 +50,17 @@ let app = new Vue({
             if(this.corrente == elenco.length){
                 this.corrente = 0;
             }
+        },
+
+        autoplay: function(elenco){
+            setInterval(() => {
+                this.corrente++;
+                if(this.corrente == elenco.length){
+                    this.corrente = 0;
+                }
+            }, 3000);
         }
+        
     
     }
 });
