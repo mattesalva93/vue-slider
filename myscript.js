@@ -37,11 +37,18 @@ let app = new Vue({
             }
             return "";
         },
-        opacityon: function(indiceimmagine){
+        opacityoff: function(indiceimmagine){
             if(indiceimmagine == this.corrente){
                 return "ms_opacity-off"
             }
             return "";
+        },
+        indietro: function(){
+            this.corrente ++;
+        },
+        successivo: function(){
+            this.corrente --;
+
         }
     
     }
