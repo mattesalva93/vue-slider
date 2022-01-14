@@ -32,23 +32,15 @@ let app = new Vue({
     },
     methods : {
         iscorrente: function(indiceimmagine){
-            if(indiceimmagine == this.corrente){
-                return "active"
-            }
-            return "";
-        },
-        opacityoff: function(indiceimmagine){
-            if(indiceimmagine == this.corrente){
-                return "ms_opacity-off"
-            }
-            return "";
+           
+            return indiceimmagine == this.corrente
+           
         },
         indietro: function(){
-            this.corrente ++;
+            this.corrente--;
         },
         successivo: function(){
-            this.corrente --;
-
+            this.corrente++;
         }
     
     }
