@@ -1,6 +1,7 @@
 let app = new Vue({
     el: "#container",
     data: {
+        scorri: null,
         corrente : 0,
         elenco : [
             {
@@ -38,29 +39,33 @@ let app = new Vue({
            
         },
 
-        indietro: function(elenco){
+        indietro: function(){
             this.corrente--;
             if(this.corrente < 0){
-                this.corrente = elenco.length - 1;
+                this.corrente = this.elenco.length - 1;
             }
         },
         
-        successivo: function(elenco){
+        successivo: function(){
             this.corrente++;
-            if(this.corrente == elenco.length){
+            if(this.corrente == this.elenco.length){
                 this.corrente = 0;
             }
         },
 
-        autoplay: function(elenco){
-            setInterval(() => {
-                this.corrente++;
-                if(this.corrente == elenco.length){
-                    this.corrente = 0;
-                }
-            }, 3000);
+        autoplay: function(){
+            this.scorri = setInterval(this.successivo, 3000);
+        },
+
+        stopautoplay : function(){
+            clearInterval(this.scorri);
+            this.scorri = null;
         }
-        
-    
+ 
+    },
+
+    mounted : function (){
+        this.autoplay();
     }
+
 });
